@@ -27,9 +27,6 @@ def homepage():
     conn.close()
     return render_template('index.html',products=product)
 
-
-    return 'Hello'
-
 @app.route('/add_product',methods=['GET','POST'])
 def add_pr():
     if request.method=='POST':
@@ -55,11 +52,6 @@ VALUES(?,?,?,?)
 ''',(name,price,desc,filename))
         conn.commit()
         conn.close()
-
-        # return redirect(url_for('homepage'))
-    
-        # print(name,price,desc)
-
 
 
     return render_template('add_products.html')
